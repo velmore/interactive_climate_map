@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+  color: black;
+}
+
+img {
+  width: 100%;
+}
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: black;
+  display: none;
+   height: 100%;
+}
+
+#Home {background-color: black;}
+#News {background-color: black;}
+#Contact {background-color: black;}
+#About {background-color: black;}
+</style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('Home', this, 'black')">About</button>
+<button class="tablink" onclick="openPage('News', this, 'black')" id="defaultOpen">Climate Threats</button>
+<button class="tablink" onclick="openPage('Contact', this, 'black')">Submit Climate Data</button>
+<button class="tablink" onclick="openPage('About', this, 'black')">Help</button>
+
+<div id="Home" class="tabcontent">
+  <h3>Survival by Degrees</h3>
+  <img src="assets/img/Webpage1.png" alt="Survival by Degrees Infographic">
+</div>
+
+<div id="News" class="tabcontent">
+  <h3>Climate Threats Analysis</h3>
+  <iframe src="https://velmore.github.io/akclimatethreats/" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px" height="500px" width="1000px" allowfullscreen></iframe> 
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h3>Submit Climate Data</h3>
+  <iframe src="https://velmore.github.io/akclimateevents/" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px" height="500px" width="1000px" allowfullscreen></iframe>
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>Help</h3>
+  <img src="assets/img/Webpage2.png" alt="Instructions for using the interactive climate map">
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
